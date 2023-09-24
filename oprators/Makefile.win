@@ -1,0 +1,37 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Library.o Distributor.o Authar.o Book.o main.o
+LINKOBJ  = Library.o Distributor.o Authar.o Book.o main.o
+LIBS     = -L"C:/Users/DELL/Dev-Cpp/MinGW64/lib" -L"C:/Users/DELL/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Users/DELL/Dev-Cpp/MinGW64/include" -I"C:/Users/DELL/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/DELL/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Users/DELL/Dev-Cpp/MinGW64/include" -I"C:/Users/DELL/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/DELL/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/DELL/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Library.o: Library.cpp
+	$(CPP) -c Library.cpp -o Library.o $(CXXFLAGS)
+
+Distributor.o: Distributor.cpp
+	$(CPP) -c Distributor.cpp -o Distributor.o $(CXXFLAGS)
+
+Authar.o: Authar.cpp
+	$(CPP) -c Authar.cpp -o Authar.o $(CXXFLAGS)
+
+Book.o: Book.cpp
+	$(CPP) -c Book.cpp -o Book.o $(CXXFLAGS)

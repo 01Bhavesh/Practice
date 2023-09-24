@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+#include<string.h>
+#include "Library.h"
+#include "Distributor.h"
+#include "Book.h"
+int main()
+{
+	Library l1("bhavesh","sakharam","aitwar","gharat");
+	l1.display()
+}
