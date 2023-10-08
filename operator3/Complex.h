@@ -6,9 +6,9 @@ class Complex
 	public:
 		Complex();
 		Complex(int x,int y);
-		Complex operator++();
+		Complex operator++();//pre-increment
 		Complex operator-();
-		Complex operator++(int);
+		Complex operator++(int);//post-increment
 		void display();
 	protected:
 		int real,img;
